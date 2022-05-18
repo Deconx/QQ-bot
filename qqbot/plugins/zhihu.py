@@ -64,7 +64,7 @@ async def zhihu_handle(bot: Bot, event: Event):
 
     posts = posts1 + posts2
     mes = []
-    index = random.randint(0, 10)
+    index = random.randint(0, len(posts))
     for i in range(0, len(posts)):
         mes += [f'第{str(i)}篇：{posts[i][1]}\n{posts[i][2]}']
     await zhihu.finish(message=Message(f'毛神知乎随机推荐\n {mes[index]}'))
